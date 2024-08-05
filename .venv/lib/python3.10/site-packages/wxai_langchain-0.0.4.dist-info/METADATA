@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: wxai-langchain
+Version: 0.0.4
+Summary: wxai-langchain enables the use of IBM watsonx.ai in LangChain projects. This is not supported by IBM.
+Author-email: Cong Nguyen <cong.nguyen@au1.ibm.com>
+Project-URL: source, https://github.com/rampadc/wxai-langchain
+Project-URL: Homepage, https://github.com/rampadc/wxai-langchain
+Keywords: watsonx.ai,wxai,langchain
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: urllib3 <2
+Requires-Dist: requests >=2.31.0
+Requires-Dist: pydantic <=1.10.10
+Requires-Dist: langchain >=0.0.200
+Requires-Dist: ibm-cloud-sdk-core >=3.16.7
+Requires-Dist: aiohttp >=3.8.4
+Requires-Dist: ibm-watson-machine-learning >=1.0.311
+Provides-Extra: dev
+Requires-Dist: python-dotenv >=1.0.0 ; extra == 'dev'
+Requires-Dist: datasets ==2.11.0 ; extra == 'dev'
+
+# IBM watsonx.ai LangChain interface
+
+This is a Python library to add a LangChain interface to IBM watsonx.ai. This is not an IBM project and is not supported by IBM.
+
+GitHub repo: https://github.com/rampadc/wxai-langchain
+
+```shell
+pip install wxai-langchain==0.0.4
+```
+
+## v0.0.4
+
+Version 0.0.4 is a breaking change and uses ibm-watson-machine-learning SDK to use the syntatic sugars that comes with the SDK.
+
+```shell
+pip install -e '.[dev]'
+```
+
+Examples:
+
+1. Create a new `.env` file `examples/0.0.4` with contents
+
+```
+API_KEY=
+PROJECT_ID=
+```
+
+2. Run the examples with 
+
+```shell
+python examples/0.0.4/<example-file>.py
+```
+
+## v0.0.2
+
+Version 0.0.2 does not use ibm-watson-machine-learning SDK.
+
+To install,
+
+```shell
+pip install wxai-langchain==0.0.2
+```
+
+To use, see the examples folder. This LangChain interface is not compatible with IBM's GenAI GenerateParams schema object.
+Always use a JSON for the model's parameters as shown in the examples.
